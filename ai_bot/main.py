@@ -1,8 +1,7 @@
 import telebot
-#from bot_logic import gen_pass, gen_emodji, flip_coin  # Импортируем функции из bot_logic
 from model import get_class
 
-# Замени 'TOKEN' на токен твоего бота
+
 bot = telebot.TeleBot("7830796741:AAEmZsGGjvaLzyDgDwZcChJ4s9c2iU9e9Oc")
 
 @bot.message_handler(commands=['start'])
@@ -44,22 +43,6 @@ def handle_docs_photo(message):
             bot.send_message(message.chat.id, result)
 
 
-# @bot.message_handler(content_types=['text', 'photo', 'sticker'])
-# def handle_message(message):
-  
-#   # Ответ на текстовое сообщение
-#   if message.text == 'Привет':
-#       bot.send_message(message.chat.id, 'Привет! Как дела?')
-  
-#   # Ответ на изображение
-#   if message.photo:
-#       bot.send_message(message.chat.id, 'Вы отправили изображение.')
-  
-#   # Ответ на стикер
-#   if message.sticker:
-#       bot.send_message(message.chat.id, 'Вы отправили стикер.')
-
-# Запускаем бота
 bot.polling()
 
 
